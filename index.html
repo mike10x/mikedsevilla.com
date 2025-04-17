@@ -17,7 +17,8 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">
-            <i class="fas fa-user-circle"></i> Mike Sevilla
+            <!--<i class="fas fa-user-circle"></i> Mike Sevilla -->
+            Mike Sevilla
         </div>
         <ul class="nav-links">
             <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
@@ -34,10 +35,28 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Mike Donald Sevilla</h1>
-            <h2>SAP Consultant & Developer</h2>
-            <p>13+ years of expertise in SAP ABAP, CRM, S/4HANA, and Fiori</p>
+            <h1>Hi there! I'm Mike</h1>
+            <h2>Software Engineer, Entrepreneur & Investor</h2>
+            <p>13+ years of expertise in SAP ABAP, ECC, S/4HANA</p>
             <div class="hero-ctas">
+                <!-- Added Social Media Links-->
+                <div class="social-links">
+                    <a href="https://github.com/mike10x" target="_blank" class="social-link" aria-label="GitHub Profile" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.credly.com/users/mikedsevilla/" target="_blank" class="social-link" aria-label="Credly Profile" title="Credly">
+                        <img src="assets/icons/credly.svg" alt="Credly Icon" class="social-icon">
+                    </a>                    
+                    <a href="https://twitter.com/maiku10x" target="_blank" class="social-link" aria-label="Twitter Profile" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://bsky.app/profile/mike10x.bsky.social" target="_blank" class="social-link" aria-label="Bluesky Profile" title="Bluesky">
+                        <img src="assets/icons/bluesky.svg" alt="Bluesky Icon" class="social-icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/mikedsevilla/" target="_blank" class="social-link" aria-label="LinkedIn Profile" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>                    
+                </div>
                 <a href="#contact" class="cta-button primary">Get in Touch</a>
                 <a href="#about" class="cta-button secondary">View My CV</a>
             </div>
@@ -50,12 +69,15 @@
         <div class="about-content">
             <img src="assets/images/mike-sevilla.jpg" alt="Mike Sevilla" class="profile-img">
             <div class="about-text">
-                <p>I’m an SAP Consultant with over 13 years of experience in ABAP, SAP CRM, and S/4HANA, specializing in system implementation, technical design, and integration. I excel in RICEFW development, CRM Middleware, and am upskilling in SAP BTP and Fiori to deliver cutting-edge solutions.</p>
+                <ul>
+                    <p>I’m an SAP Consultant & Developer with over 13 years of experience in ABAP, SAP CRM, and S/4HANA, specializing in system implementation, technical design, and integration. I excel in RICEFW development, CRM Middleware, and am upskilling in SAP BTP and Fiori to deliver cutting-edge solutions.</p>
+                </ul>
                 <h3>Key Skills</h3>
                 <ul>
                     <li>SAP S/4HANA, ECC (CRM, SD, MM, FICO, RE-FX)</li>
-                    <li>ABAP (OOP, Procedural), ABAP-CRM (BOL), ABAP on HANA</li>
-                    <li>SAP BTP, Fiori, SAP BAS</li>
+                    <li>ABAP (OOP, Procedural), ABAP-CRM (BOL), ABAP on HANA (CDS Views, AMDP, OpenSQL), CAPM, JavaScript, HTML5, CSS3</li>
+                    <li>Eclipse IDE (ADT), SAP Business Application Studio, Visual Studio Code</li>
+                    <li>SAP BTP & SAP Fiori/UI5</li>
                     <li>Leadership, Problem-Solving, Communication</li>
                 </ul>
                 <h3>Certifications</h3>
@@ -63,6 +85,8 @@
                     <li>SAP Certified Associate: Backend Developer - SAP Cloud Application Programming Model (2025)</li>
                     <li>SAP Certified Development Associate: SAP Fiori Application Developer (2023)</li>
                     <li>SAP Certified Development Associate: SAP HANA 2.0 SPS06 (2023)</li>
+                    <li>Certified Bitcoin Professional, CryptoCurrency Certification Consortium (2021)</li>
+                    <li>Registered Electronics Engineer, Philippine Professional Regulation Commission (2011)</li>
                 </ul>
             </div>
         </div>
@@ -74,19 +98,15 @@
         <div class="projects-grid">
             <div class="project-tile">
                 <h3>ABAP Program Optimization</h3>
-                <p>Optimized a customized ABAP program at Fujitsu, reducing execution time by 90% using OOP and CDS views.</p>
-                <a href="#" class="tile-link">Learn More</a>
+                <p>Optimized a customized ABAP program at Fujitsu, reducing execution time by 90% using ABAP Development best practices.</p>
+                <!-- <a href="#" class="tile-link">Learn More</a> -->
             </div>
             <div class="project-tile">
                 <h3>CRM Quotation Workflow</h3>
-                <p>Designed and implemented a CRM Quotation Approval Workflow at Grundfos, integrating SAP-CRM with Hybris.</p>
-                <a href="#" class="tile-link">Learn More</a>
+                <p>Designed and implemented a CRM Quotation Approval Workflow at Grundfos, integrating SAP-CRM with S/4HANA On-Premise, EDI and Hybris.</p>
+                <!-- <a href="#" class="tile-link">Learn More</a> -->
             </div>
-            <div class="project-tile">
-                <h3>Fiori Application Enhancements</h3>
-                <p>Developed Fiori app enhancements for FI and SD modules, improving user experience and efficiency.</p>
-                <a href="#" class="tile-link">Learn More</a>
-            </div>
+            <!-- Add other projects here if they exist -->
         </div>
     </section>
 
@@ -95,28 +115,35 @@
         <h2>Speaking Engagements</h2>
         <div class="speaking-grid">
             <div class="speaking-card">
-                <h3>SAP TechEd 2024</h3>
-                <p>Presented on "Optimizing ABAP for S/4HANA: Best Practices" to an audience of 200+ SAP professionals.</p>
+                <h3>SAP Technology Seminar</h3>
+                <p><em>San Pedro College of Business Administrations, 2015</em></p>
+                <p>Presented on “Roles and Rewards in SAP Development” for graduating IT and ECE students. Shared real-world SAP insights, career tips, and technical know-how.</p>
                 <a href="#" class="tile-link">View Slides</a>
             </div>
             <div class="speaking-card">
-                <h3>SAP Insider 2023</h3>
-                <p>Spoke on "Leveraging Fiori for Enhanced User Experience" at the annual conference.</p>
-                <a href="#" class="tile-link">Watch Recording</a>
+                <h3>Money Wise: Biblical and Practical Ways of Handling Your Finances</h3>
+                <p><em>Mt. Moriah Global Ministries, Inc., 2024</em></p>
+                <p>A talk on financial management with biblical insights, covering budgeting (50/30/20), debt management (snowball, avalanche), saving (emergency, sinking funds), and investing (stocks, ETFs). Delivered with my wife, a former editor/designer, now a full-time wife and skilled budgeter, after 3 years of marriage.</p>
+                <!--<img src="assets/images/MoneyWise.jpg" alt="Mike and his wife speaking at the event" class="speaking-img"> -->
+                <a href="#" class="tile-link">View Slides</a>
             </div>
+        <!-- Add other speaking engagements here if they exist -->
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Reach out to discuss SAP solutions or collaboration opportunities.</p>
-        <div class="contact-links">
-            <a href="mailto:miked.sevilla@protonmail.com" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
-            <a href="https://www.linkedin.com/in/mikedsevilla/" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        </div>
+        <h2>Contact Me</h2>
+        <form id="contact-form" action="https://formspree.io/f/xkgjaewe" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
-
     <!-- Footer -->
     <footer>
         <p>© 2025 Mike Donald Sevilla. All rights reserved.</p>

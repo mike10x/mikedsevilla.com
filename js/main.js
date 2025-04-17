@@ -37,42 +37,85 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Contact Form Submission (Placeholder with Better Feedback)
+    // Contact Form Submission with Formspree
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
             const name = document.getElementById('name')?.value || 'User';
-            // Display a Fiori-style notification (Simple and Delightful)
-            const notification = document.createElement('div');
-            notification.className = 'fiori-notification';
-            notification.innerHTML = `Thank you, ${name}! Your message has been sent. (This is a placeholder.)`;
-            document.body.appendChild(notification);
+            const email = document.getElementById('email')?.value;
+            const submitButton = contactForm.querySelector('button[type="submit"]');
 
-            // Remove notification after 3 seconds
-            setTimeout(() => {
-                notification.remove();
-            }, 3000);
+            // Client-side email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) { 
+                const notification = document.createElement('div');
+                notification.className = 'fiori-notification error';
+                notification.innerHTML = `Please enter a valid email address.`;
+                document.body.appendChild(notification);
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+                return;
+            }
 
-            contactForm.reset();
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Success notification
+                    const notification = document.createElement('div');
+                    notification.className = 'fiori-notification success';
+                    notification.innerHTML = `Thank you, ${name}! Your message has been sent.`;
+                    document.body.appendChild(notification);
+
+                    // Remove notification after 3 seconds
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 3000);
+
+                    contactForm.reset(); // Reset the form
+                } else {
+                    // Error notification
+                    const notification = document.createElement('div');
+                    notification.className = 'fiori-notification error';
+                    notification.innerHTML = `Oops, something went wrong. Please try again later.`;
+                    document.body.appendChild(notification);
+
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 3000);
+                }
+            } catch (error) {
+                // Network error notification
+                const notification = document.createElement('div');
+                notification.className = 'fiori-notification error';
+                notification.innerHTML = `Network error. Please check your connection and try again.`;
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);      
+            } finally {
+                // Reset button state
+                submitButton.disable = false;
+                submitButton.textContent = 'Send Message';
+            }
         });
     }
-
-    // Back-to-Top Button (Role-Based for Easy Navigation)
-    const backToTop = document.createElement('button');
-    backToTop.className = 'back-to-top';
-    backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    backToTop.setAttribute('aria-label', 'Back to top');
-    document.body.appendChild(backToTop);
-
-    // Show/hide back-to-top button based on scroll position
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    });
 
     // Smooth scroll to top
     backToTop.addEventListener('click', () => {
