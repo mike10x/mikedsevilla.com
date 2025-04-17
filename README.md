@@ -33,5 +33,7 @@ I am a seasoned SAP Consultant with over 13 years of experience in delivering en
 - **JavaScript**: For interactivity, such as mobile menu toggling and form handling.
 - **Font Awesome**: For icons in the navigation and other UI elements.
 - **GitHub Pages**: For hosting the website.
+- **Formspree**: For contact form submission template
+- **Namecheap**: For custom domain provider
 
 ## Project Structure
