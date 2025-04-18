@@ -117,11 +117,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth scroll to top
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    // Back to top Button Functionality
+    const backToTopButton = document.querySelector( '.back-to-top');
+
+    if  (backToTopButton) {
+        // Show/hide button based on scroll position
+        window.addEventListener( 'scroll', () => {
+            if (window.scrollY > 300) { // Show button after scrolling 300px
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
         });
-    });
+
+        // Smooth scroll to top on click
+        backToTopButton.addEventListener( 'click', () => {
+            window.scrollTo({
+                top: 0, 
+                behavior: 'smooth'            
+            });
+        });
+    }
 });
