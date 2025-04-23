@@ -282,11 +282,12 @@ body {
 .project-tile {
     background: #fff;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 1.5rem; /* Increased padding for more content */
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    height: 200px; /* Fixed height for uniform tiles */
+    height: auto; /* Allow height to adjust to content */
+    min-height: 200px; /* Ensure tiles don’t collapse too much */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -309,6 +310,22 @@ body {
     font-size: 0.8rem;
     color: #666;
     flex-grow: 1;
+}
+
+.tech-badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    background: #E6F0FA; /* Light blue background */
+    color: #003087; /* SAP Blue text */
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
 }
 
 .tile-link {
@@ -335,7 +352,7 @@ body {
 .speaking-card {
     background: #fff;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 1.5rem; /* Increased padding for more content */
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -710,5 +727,30 @@ footer {
 
     .back-to-top i {
         font-size: 1rem;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .project-tile {
+        padding: 1rem;
+        min-height: 180px;
+    }
+
+    .project-tile h3 {
+        font-size: 0.9rem;
+    }
+
+    .project-tile p {
+        font-size: 0.75rem;
+    }
+
+    .badge {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .tile-link {
+        font-size: 0.75rem;
     }
 }
