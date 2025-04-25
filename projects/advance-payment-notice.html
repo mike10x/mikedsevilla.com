@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study on an automated advance payment notification system built with SAP FICO and ABAP by Mike Sevilla.">
+    <meta name="keywords" content="SAP FICO, ABAP, Advance Payment, Automation">
+    <meta name="author" content="Mike Sevilla">
+    <meta property="og:title" content="Automated Advance Payment Notification System - Mike Sevilla">
+    <meta property="og:description" content="Case study on an automated advance payment notification system built with SAP FICO and ABAP by Mike Sevilla.">
+    <!-- <meta property="og:image" content="https://www.mikedsevilla.com/assets/images/advance-payment-flowchart.png"> -->
+    <meta property="og:url" content="https://www.mikedsevilla.com/projects/advance-payment-notice.html">
+    <meta property="og:type" content="article">    
     <title>Automated Advance Payment Notification System - Mike Sevilla</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="../assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 </head>
 <body>
     <!-- Include Navbar (copy from index.html) -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation">
         <div class="logo">Mike Sevilla</div>
         <ul class="nav-links">
             <li><a href="../index.html#home">Home</a></li>
@@ -18,7 +27,7 @@
             <li><a href="../index.html#projects">Projects</a></li>
             <li><a href="../index.html#contact">Contact</a></li>
         </ul>
-        <div class="hamburger">
+        <div class="hamburger" role="button" aria-label="Toggle navigation menu" aria-expanded="false">
             <i class="fas fa-bars"></i>            
             <span></span>
             <span></span>
@@ -31,11 +40,15 @@
         <h2>Automated Advance Payment Notification System</h2>
         <div class="case-study-content">
             <h3>Background</h3>
-            <p>As a Senior ABAP Developer in collaboration with SAP FICO Consultant, I was assigned to automate the process of generating and distributing advance payment notices, which was previously a manual task. I developed a program to streamline this process, producing PDF reports and sending email notifications.</p>
+            <p>As a Senior ABAP Developer, I collaborated with an SAP FICO Consultant to automate the process of generating and distributing advance payment notices, which was previously a manual task. I developed a program to streamline this process, producing PDF reports and sending email notifications.</p>
             
             <h3>Technical Approach</h3>
             <p>Built an ABAP program in the SAP FICO module, using Smart Forms to generate PDF reports for advance payment notices. Integrated email functionality to automatically send notifications to vendors, retrieving data such as vendor details, invoice items, and payment amounts from SAP tables. Implemented error handling and logging to ensure reliable processing.</p>
             
+            <!-- Add Pseudocode Image -->
+            <div class="image-caption">Pseudocode: Generating the PDF and attach in the email notification</div>               
+            <img src="../assets/images/advance-payment-pseudo-code.png" alt="Pseudo-Code for Generating the PDF and attach in the email notification" class="case-study-image" loading="lazy">
+
             <h3>Challenges</h3>
             <p>The main challenge was ensuring accurate data retrieval and formatting for both PDF reports and emails, especially when handling multiple vendors and payment records. I addressed this by optimizing database queries and adding validation checks to maintain data integrity.</p>
             
@@ -45,12 +58,6 @@
             <h3>Lessons Learned</h3>
             <p>This project taught me the importance of efficient data retrieval in SAP for large datasets. I also learned to design automated workflows that balance performance with user-friendly output, such as clear PDF reports and email notifications.</p>
 
-            <!-- Add Flowchart Image -->
-            <!--  <img src="../assets/images/advance-payment-flowchart.png" alt="Advance Payment Notification Flowchart" class="case-study-image"> -->
-            
-            <!-- Add Code Snippet Image -->
-            <!--  <img src="../assets/images/advance-payment-code-snippet.png" alt="Advance Payment Code Snippet" class="case-study-image"> -->
-            
             <a href="https://www.credly.com/users/mikedsevilla/badges" target="_blank" class="cta-button secondary">View My SAP Certifications</a> 
             <a href="../index.html#projects" class="cta-button secondary">Back to Projects</a>
         </div>
