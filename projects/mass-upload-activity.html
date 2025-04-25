@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Mass Upload Program for CRM Activity Management - Mike Sevilla</title>
+    <meta name="description" content="Case study on an automated mass upload program for CRM Activities built with SAP CRM and ABAP by Mike Sevilla.">
+    <meta name="keywords" content="SAP CRM, ABAP, Mass Upload, Automation">
+    <meta name="author" content="Mike Sevilla">
+    <meta property="og:title" content="Mass Upload Program for CRM Activity Management - Mike Sevilla">
+    <meta property="og:description" content="Case study on an automated mass upload program for CRM Activities built with SAP CRM and ABAP by Mike Sevilla.">
+    <meta property="og:url" content="https://www.mikedsevilla.com/projects/advance-payment-notice.html">
+    <meta property="og:type" content="article">        
+    <title>Mass Upload Program for CRM Activity Management - Mike Sevilla</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="../assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation">
         <div class="logo">Mike Sevilla</div>
         <ul class="nav-links">
             <li><a href="../index.html#home">Home</a></li>
@@ -17,7 +25,7 @@
             <li><a href="../index.html#projects">Projects</a></li>
             <li><a href="../index.html#contact">Contact</a></li>
         </ul>
-        <div class="hamburger">
+        <div class="hamburger" role="button" aria-label="Toggle navigation menu" aria-expanded="false">
             <i class="fas fa-bars"></i>               
             <span></span>
             <span></span>
@@ -35,6 +43,10 @@
             <h3>Technical Approach</h3>
             <p>Designed and developed an ABAP program to handle mass activity management in SAP-CRM, leveraging the Object-Oriented Programming (OOP) and Business Object Layer (BOL) for data operations. Implemented file upload functionality with validation checks to ensure data accuracy, and used ALV reporting to provide user-friendly feedback on processing results, including success and error indicators.</p>
             
+            <!-- Add Pseudocode Image -->
+            <div class="image-caption">Pseudocode: Querying CRM Activities Using BOL</div>               
+            <img src="../assets/images/mass-upload-pseudo-code.png" alt="Pseudo-Code for Querying CRM Activities in Mass Upload Program" class="case-study-image" loading="lazy">            
+            
             <h3>Challenges</h3>
             <p>The primary challenge was managing large data uploads while maintaining data integrity. I addressed this by implementing validation rules and transaction management to ensure reliable processing, with a test mode to validate uploads before committing changes.</p>
             
@@ -43,7 +55,7 @@
             
             <h3>Lessons Learned</h3>
             <p>This project taught me the importance of designing user-friendly tools for non-technical users, such as clear error reporting in ALV. It also reinforced the need for thorough validation in mass data processing to prevent errors.</p>
-            
+
             <a href="https://www.credly.com/users/mikedsevilla/badges" target="_blank" class="cta-button secondary">View My SAP Certifications</a>
             <a href="../index.html#projects" class="cta-button secondary">Back to Projects</a>
         </div>

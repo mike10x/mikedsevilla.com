@@ -4,13 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links a');
 
-    // Toggle hamburger menu
-    hamburger.addEventListener('click', () => {
-        const isExpanded = navLinks.classList.toggle('active');
-        hamburger.setAttribute('aria-expanded', isExpanded); // Accessibility for screen readers
-        hamburger.innerHTML = isExpanded ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>'; // Toggle icon for delight
-    });
+    const icons = {
+        open: '<i class="fas fa-bars"></i>',
+        close: '<i class="fas fa-times"></i>'
+    };
 
+    // Toggle hamburger menu
+    if (hamburger && navLinks) {    
+        hamburger.addEventListener('click', () => {
+            const isExpanded = navLinks.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isExpanded); // Accessibility for screen readers
+            hamburger.innerHTML = isExpanded ? icons.close : icons.open; // Toggle icon for delight
+        });
+    }
     // Close mobile menu after clicking a nav link (Simple and Delightful)
     navItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -27,12 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
-                const offset = 60; // Adjust for fixed navbar height
+                const offset = 60;
                 const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                 window.scrollTo({
                     top: elementPosition - offset,
                     behavior: 'smooth'
                 });
+                if (targetElement.hasAttribute('tabindex') || targetElement.tagName === 'A') {
+                    targetElement.focus();
+                }
             }
         });
     });
@@ -48,9 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitButton = contactForm.querySelector('button[type="submit"]');
 
             // Client-side email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
             if (!emailRegex.test(email)) { 
                 const notification = document.createElement('div');
+                notification.setAttribute('role', 'alert');
                 notification.className = 'fiori-notification error';
                 notification.innerHTML = `Please enter a valid email address.`;
                 document.body.appendChild(notification);
@@ -111,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 3000);      
             } finally {
                 // Reset button state
-                submitButton.disable = false;
+                submitButton.disabled = false;
                 submitButton.textContent = 'Send Message';
             }
         });
