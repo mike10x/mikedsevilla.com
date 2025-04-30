@@ -1,3 +1,31 @@
+:root {
+    /* Colors */
+    --primary-blue: #003087;
+    --light-blue: #00A1D6;    
+    --background-light: #F5F9FF;    
+
+    /* Shadow */
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    /* Spacing */
+    --spacing-lg: 2rem;
+    --spacing-md: 1rem;
+    --spacing-sm: 0.5rem;    
+    --spacing-xs: 0.25rem;    
+
+    /* Font Sizes */
+    --font-size-2xl: 2.5rem;
+    --font-size-xl: 2rem;
+    --font-size-lg: 1.5rem;
+    --font-size-md: 1rem;
+    --font-size-sm: 0.9rem;
+    
+    /* Focus */
+    --focus-outline: 2px solid var(--primary-blue);
+    --focus-offset: 2px;    
+}
+
 /* Reset and Base Styles */
 html {
     box-sizing: border-box;
@@ -15,22 +43,23 @@ body {
     font-size: 16px;    
     line-height: 1.6;
     color: #333;
-    background: #F5F9FF; /* Fiori Light Background */
+    background: var(--background-light); /* Fiori Light Background */
 }
 
 /* Navigation (Fiori Launchpad Top Bar) */
 .navbar {
+    display: -webkit-flex; /* For older Safari */    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem; /* Slimmer padding for a Launchpad feel */
-    background: #003087; /* SAP Blue */
+    padding: 0.5rem 1rem;
+    background: var(--primary-blue);
     color: #fff;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 .logo {
@@ -56,13 +85,13 @@ body {
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 0.9rem; /* Smaller font for Launchpad style */
+    font-size: var(--font-size-sm);
     font-weight: 400;
     display: flex;
     align-items: center;
     padding: 0.5rem 1rem;
     border-radius: 4px;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .nav-links a i {
@@ -71,18 +100,18 @@ body {
 
 .nav-links a:hover,
 .nav-links a:focus {
-    background: #00A1D6; /* SAP Light Blue on hover */
+    background: var(--light-blue);
 }
 
 .hamburger {
     display: none;
-    font-size: 1.5rem;
+    font-size: var(--font-size-lg);
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
 a:focus, .hamburger:focus, .cta-button:focus {
-    outline: 2px solid #003087;
+    outline: 2px solid var(--primary-blue);
     outline-offset: 2px;
 }
 
@@ -97,7 +126,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(to bottom, #E6F0FA, #F5F9FF); /* Subtle gradient */
+    background: linear-gradient(to bottom, #E6F0FA, var(--background-light)); 
     padding: 2rem;
     margin-top: 56px; /* Offset for fixed navbar */
 }
@@ -107,21 +136,21 @@ a:focus, .hamburger:focus, .cta-button:focus {
 }
 
 .hero h1 {
-    font-size: 2.5rem; /* Smaller for a Launchpad feel */
+    font-size: var(--font-size-2xl); 
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #003087;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-blue);
 }
 
 .hero h2 {
     font-size: 1.25rem;
     font-weight: 400;
     margin-bottom: 1rem;
-    color: #555;
+    color: #444;
 }
 
 .hero p {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
     margin-bottom: 2rem;
     color: #333;
 }
@@ -148,10 +177,10 @@ a:focus, .hamburger:focus, .cta-button:focus {
     height: 40px;
     background: #fff;
     border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
     text-decoration: none;
-    color: #003087;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    color: var(--primary-blue);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .social-link i {
@@ -160,7 +189,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
 
 .social-link:hover,
 .social-link:focus {
-    background: #00A1D6;
+    background: var(--light-blue);
     color: #fff;
     transform: translateY(-2px);
 }
@@ -171,7 +200,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: #003087;
+    background: var(--primary-blue);
     color: #fff;
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
@@ -184,7 +213,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
 .social-icon {
     width: 20px;
     height: 20px;
-    fill: #003087; /* SAP Blue */
+    fill: var(--primary-blue);
     transition: fill 0.3s ease;
 }
 
@@ -197,7 +226,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
 .case-study-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: #f5f5f5; /* Light background for contrast, Fiori-inspired */
+    background: #f5f5f5;
 }
 
 /* Case Study Content */
@@ -209,28 +238,28 @@ a:focus, .hamburger:focus, .cta-button:focus {
     padding-top: 3rem;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 /* Style the h2 inside case-study-content */
 .case-study-content h2 {
-    font-size: 2rem;
-    color: #003087; /* SAP blue */
+    font-size: var(--font-size-xl);
+    color: var(--primary-blue); 
     margin-bottom: 1.5rem;
-    text-align: center; /* Center the title */
-    line-height: 1.3; /* Improve readability for long titles */
-    overflow-wrap: break-word; /* Ensure long title wraps */
-    word-break: break-word; /* Break long words if necessary */
+    text-align: center; 
+    line-height: 1.3; 
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .case-study-content h3 {
-    font-size: 1.5rem;
+    font-size: var(--font-size-lg);
     margin-bottom: 1rem;
-    color: #003087; /* SAP blue */
+    color: var(--primary-blue); 
 }
 
 .case-study-content p {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -241,12 +270,12 @@ a:focus, .hamburger:focus, .cta-button:focus {
     margin: 1rem auto;
     display: block;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 .image-caption {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     font-style: italic;
     color: #555;
     margin-bottom: 0.5rem;
@@ -254,12 +283,12 @@ a:focus, .hamburger:focus, .cta-button:focus {
 
 .cta-button {
     display: inline-block;
-    padding: 0.6rem 1.5rem; /* Slimmer buttons for Launchpad style */
+    padding: 0.6rem 1.5rem;
     text-decoration: none;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     font-weight: 600;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button i {
@@ -267,43 +296,43 @@ a:focus, .hamburger:focus, .cta-button:focus {
 }
 
 .cta-button.primary {
-    background: #003087;
+    background: var(--primary-blue);
     color: #fff;
     transition: background-color 0.3s ease, transform 0.2s ease;    
 }
 
 .cta-button.primary:hover,
 .cta-button.primary:focus {
-    background: #00A1D6;
+    background: var(--light-blue);
     transform: translateY(-2px);
 }
 
 .cta-button.secondary {
     background: transparent;
-    color: #003087;
-    border: 1px solid #003087;
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
 }
 
 .cta-button.secondary:hover,
 .cta-button.secondary:focus {
-    background: #003087;
+    background: var(--primary-blue);
     color: #fff;
     transform: translateY(-2px);
 }
 
 /* Section Styles (Fiori Launchpad Content Area) */
 .section {
-    padding: 4rem 2rem; /* Adjusted padding for a Launchpad feel */
+    padding: 4rem 2rem; 
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .section h2 {
-    font-size: 1.5rem; /* Smaller heading for Launchpad style */
+    font-size: var(--font-size-lg); 
     font-weight: 600;
     margin-bottom: 1.5rem;
     text-align: left; /* Left-aligned for a Launchpad look */
-    color: #003087;
+    color: var(--primary-blue);
 }
 
 /* About Section (Fiori Card Style) */
@@ -311,18 +340,18 @@ a:focus, .hamburger:focus, .cta-button:focus {
     display: flex;
     gap: 1.5rem;
     align-items: center;
-    background: #fff; /* White background for a Fiori card */
+    background: #fff;
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 .profile-img {
-    width: 150px; /* Smaller for a Launchpad card */
+    width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 .about-text {
@@ -337,7 +366,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
 
 .about-text ul li {
     margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     position: relative;
     padding-left: 1.5rem;
 }
@@ -346,7 +375,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
     content: "✔";
     position: absolute;
     left: 0;
-    color: #00A1D6;
+    color: var(--light-blue);
 }
 
 /* Projects Section (Fiori Launchpad Tiles) */
@@ -359,9 +388,9 @@ a:focus, .hamburger:focus, .cta-button:focus {
 .project-tile {
     background: #fff;
     border-radius: 8px;
-    padding: 1.5rem; /* Increased padding for more content */
+    padding: 1.5rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     height: auto; /* Allow height to adjust to content */
     min-height: 200px; /* Ensure tiles don’t collapse too much */
@@ -373,7 +402,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
 .project-tile:hover,
 .project-tile:focus {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-md);
 }
 
 .project-tile:hover .video-container iframe {
@@ -382,10 +411,10 @@ a:focus, .hamburger:focus, .cta-button:focus {
 }
 
 .project-tile h3 {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #003087;
+    color: var(--primary-blue);
 }
 
 .project-tile p {
@@ -395,41 +424,49 @@ a:focus, .hamburger:focus, .cta-button:focus {
 }
 
 .video-container {
+    aspect-ratio: 16 / 9;
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio (315/560) */
-    height: 0;
-    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;    
     max-width: 100%;
-    margin: 1rem 0;
   }
   
-  .video-container iframe {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border: 0;
-    border-radius: 8px; /* Matches .project-tile */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Matches .project-tile */
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
   }
+
+  @supports not (aspect-ratio: 16 / 9) {
+    .video-container {
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+}
   
   .video-fallback {
     font-size: 0.8rem;
-    color: #003087;
+    color: var(--primary-blue);
     text-align: center;
     margin-top: 0.5rem;
   }
   
   .video-fallback a {
-    color: #003087;
+    color: var(--primary-blue);
     text-decoration: none;
     font-weight: 600;
   }
   
   .video-fallback a:hover,
   .video-fallback a:focus {
-    color: #00A1D6;
+    color: var(--light-blue);
     text-decoration: underline;
   }
 
@@ -442,7 +479,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
 
 .badge {
     background: #E6F0FA; /* Light blue background */
-    color: #003087; /* SAP Blue text */
+    color: var(--primary-blue);
     padding: 0.3rem 0.6rem;
     border-radius: 12px;
     font-size: 0.7rem;
@@ -452,7 +489,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
 .tile-link {
     display: inline-block;
     font-size: 0.8rem;
-    color: #003087;
+    color: var(--primary-blue);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -460,7 +497,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
 
 .tile-link:hover,
 .tile-link:focus {
-    color: #00A1D6;
+    color: var(--light-blue);
     text-decoration: underline;
 }
 
@@ -476,7 +513,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
     border-radius: 8px;
     padding: 1.5rem; /* Increased padding for more content */
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     height: auto; /* Adjusted to accommodate varying content */
     min-height: 200px; /* Ensure tiles don’t collapse too much */
@@ -488,14 +525,14 @@ a:focus, .hamburger:focus, .cta-button:focus {
 .speaking-card:hover,
 .speaking-card:focus {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-md);
 }
 
 .speaking-card h3 {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #003087;
+    color: var(--primary-blue);
 }
 
 .speaking-card p {
@@ -515,7 +552,7 @@ a:focus, .hamburger:focus, .cta-button:focus {
     background: #fff;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
     text-align: center;
 }
 
@@ -527,11 +564,11 @@ a:focus, .hamburger:focus, .cta-button:focus {
 }
 
 #contact h2 {
-    font-size: 1.5rem;
+    font-size: var(--font-size-lg);
     font-weight: 600;
     margin-bottom: 1.5rem;
     text-align: center; /* Center the heading in all views */
-    color: #003087;
+    color: var(--primary-blue);
 }
 
 #contact form {
@@ -543,12 +580,12 @@ a:focus, .hamburger:focus, .cta-button:focus {
     background: #fff;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 /* Form field styles */
 #contact label {
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     color: #333;
     text-align: left;
     display: block; /* Ensure labels stack above fields */
@@ -561,13 +598,13 @@ a:focus, .hamburger:focus, .cta-button:focus {
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #contact input:focus,
 #contact textarea:focus {
-    border-color: #003087;
+    border-color: var(--primary-blue);
     outline: none;
     box-shadow: 0 0 5px rgba(0, 48, 135, 0.3);
 }
@@ -579,20 +616,21 @@ a:focus, .hamburger:focus, .cta-button:focus {
 
 #contact button {
     padding: 0.6rem 1.5rem;
-    background: #003087;
+    background: var(--primary-blue);
     color: #fff;
     border: none;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     align-self: center;
 }
 
 #contact button:hover,
 #contact button:focus {
-    background: #00A1D6;
+    /* background: #00A1D6; */
+    background: var(--light-blue);
     transform: translateY(-2px);
 }
 
@@ -600,34 +638,6 @@ a:focus, .hamburger:focus, .cta-button:focus {
     background: #ccc;
     cursor: not-allowed;
     transform: none;
-}
-
-/* Responsive Design for Contact Section */
-@media (max-width: 768px) {
-    #contact {
-        padding: 2rem 0.5rem;
-    }
-
-    #contact h2 {
-        text-align: center;
-    }
-
-    #contact form {
-        max-width: 100%;
-        padding: 1.5rem;
-    }
-    
-}
-
-@media (max-width: 480px) {
-    #contact form {
-        padding: 1rem;
-    }
-
-    #contact button {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-    }
 }
 
 /* Footer (Fiori Launchpad Footer) */
@@ -641,7 +651,7 @@ footer {
 
 footer p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     color: #333;
 }
 
@@ -653,36 +663,19 @@ footer p {
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     animation: slideIn 0.3s ease-out;
     will-change: transform, opacity;    
 }
 
 .fiori-notification.success {
     background: #E6F0FA; /* Light blue background for success */
-    color: #003087; /* SAP Blue text */
+    color: var(--primary-blue); 
 }
 
 .fiori-notification.error {
     background: #FFE6E6; /* Light red background for error */
     color: #D00000; /* Red text for error */
-}
-
-/* Responsive Design for Notifications */
-@media (max-width: 768px) {
-    .fiori-notification {
-        top: 10px;
-        right: 10px;
-        font-size: 0.8rem;
-        padding: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .fiori-notification {
-        font-size: 0.7rem;
-        padding: 0.6rem;
-    }
 }
 
 @keyframes slideIn {
@@ -701,11 +694,11 @@ footer p {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #003087;
+    background: var(--primary-blue);
     color: #fff;
     border: none;
     border-radius: 50%;
-    width: 40px; /* Smaller for Launchpad style */
+    width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -724,12 +717,12 @@ footer p {
 
 .back-to-top:hover,
 .back-to-top:focus {
-    background: #00A1D6; /* SAP Light Blue on hover */
+    background: var(--light-blue);
     transform: translateY(-5px);
 }
 
 .back-to-top i {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
 }
 
 /* Responsive Design (Fiori Launchpad Responsiveness) */
@@ -739,17 +732,17 @@ footer p {
     }
 
     .logo {
-        font-size: 1rem;
+        font-size: var(--font-size-md);
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 48px; /* Adjust for slimmer navbar */
+        top: 48px;
         left: 0;
         width: 100%;
-        background: #003087;
+        background: var(--primary-blue);
         padding: 0.5rem 0;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
@@ -766,7 +759,7 @@ footer p {
     }
 
     .nav-links a {
-        font-size: 1rem;
+        font-size: var(--font-size-md);
         padding: 0.8rem;
     }
 
@@ -788,16 +781,16 @@ footer p {
     }
 
     .hero h2 {
-        font-size: 1rem;
+        font-size: var(--font-size-md);
     }
 
     .hero p {
-        font-size: 0.9rem;
+        font-size: var(--font-size-sm);
     }
 
     .hero p span {
         font-weight: 600;
-        color: #003087; /* Highlight Blockchain Enthusiast */
+        color: var(--primary-blue); /* Highlight Blockchain Enthusiast */
     }
 
     .hero-ctas {
@@ -836,7 +829,7 @@ footer p {
     }
 
     .back-to-top i {
-        font-size: 1rem;
+        font-size: var(--font-size-md);
     }
 
     /* Adjust Case Study Section */
@@ -854,7 +847,7 @@ footer p {
 
     /* Adjust Title and Text */
     .case-study-content h2 {
-        font-size: 1.5rem;
+        font-size: var(--font-size-lg);
         margin-top: 2rem;
         margin-bottom: 1rem;
         text-align: center;
@@ -867,7 +860,7 @@ footer p {
     /* Additional adjustment for very small screens */
     @media (max-width: 400px) {
         .case-study-content h2 {
-            font-size: 1rem; /* Further reduce font size for very small screens */
+            font-size: var(--font-size-md); 
             line-height: 1.2;
         }
     }    
@@ -877,7 +870,7 @@ footer p {
     }
 
     .case-study-content p {
-        font-size: 0.9rem;
+        font-size: var(--font-size-sm);
     }
 
     /* Ensure Images Fit */
@@ -890,15 +883,40 @@ footer p {
         font-size: 0.8rem;
     }
 
+    .skills-grid {
+        gap: 0.3rem;
+    }
+    .skill-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }    
+
+    #contact {
+        padding: 2rem 0.5rem;
+    }
+    #contact h2 {
+        text-align: center;
+    }
+    #contact form {
+        max-width: 100%;
+        padding: 1.5rem;
+    }    
+
+    .fiori-notification {
+        top: 10px;
+        right: 10px;
+        font-size: 0.8rem;
+        padding: 0.8rem;
+    }    
 }
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 1.5rem;
+        font-size: var(--font-size-lg);
     }
 
     .hero h2 {
-        font-size: 0.9rem;
+        font-size: var(--font-size-sm);
     }
 
     .hero p {
@@ -924,19 +942,15 @@ footer p {
     }
 
     .back-to-top i {
-        font-size: 1rem;
+        font-size: var(--font-size-md);
     }
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
     .project-tile {
         padding: 1rem;
         min-height: 250px;
     }
 
     .project-tile h3 {
-        font-size: 0.9rem;
+        font-size: var(--font-size-sm);
     }
 
     .project-tile p {
@@ -950,7 +964,21 @@ footer p {
 
     .tile-link {
         font-size: 0.75rem;
+    }    
+
+    #contact form {
+        padding: 1rem;
     }
+
+    #contact button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }    
+
+    .fiori-notification {
+        font-size: 0.7rem;
+        padding: 0.6rem;
+    }    
 }
 
 /* Skills Section */
@@ -964,18 +992,8 @@ footer p {
 
 .skill-badge {
     background: #E6F0FA;
-    color: #003087;
+    color: var(--primary-blue);
     padding: 0.5rem 1rem;
     border-radius: 16px;
-    font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-    .skills-grid {
-        gap: 0.3rem;
-    }
-    .skill-badge {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
-    }
+    font-size: var(--font-size-sm);
 }
