@@ -119,6 +119,10 @@ a:focus, .hamburger:focus, .cta-button:focus {
     transform: rotate(90deg);
 }
 
+.hamburger.active {
+    transform: rotate(90deg);
+}
+
 /* Hero Section (Fiori Launchpad Homepage Feel) */
 .hero {
     height: calc(100vh - 56px); /* Adjust for fixed navbar height */
