@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Requested Delivery Date Update Module by Mike Sevilla, SAP Consultant & Developer">
+    <meta name="keywords" content="SAP Consultant, SAP Developer, ABAP, RFC, SAP SD, Supply Chain">
+    <meta name="author" content="Mike Sevilla">
+    <meta property="og:title" content="Requested Delivery Date Update Module - Mike Sevilla">
+    <meta property="og:description" content="Case study on an RFC-enabled ABAP module to update requested delivery dates in SAP SD.">
+    <meta property="og:image" content="https://mikedsevilla.com/assets/images/mike-sevilla.png">
+    <meta property="og:url" content="https://mikedsevilla.com/projects/delivery-date-update">
+    <meta property="og:type" content="website">
+    <title>Requested Delivery Date Update Module - Mike Sevilla</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="icon" href="../../assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation">
+        <div class="logo">Mike Sevilla</div>
+        <ul class="nav-links">
+            <li><a href="../../index.html#home">Home</a></li>
+            <li><a href="../../index.html#about">About</a></li>
+            <li><a href="../../index.html#projects">Projects</a></li>
+            <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" role="button" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>               
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Case Study Section -->
+     <section id="case-study" class="case-study-section">
+        <h2>Requested Delivery Date Update Module</h2>
+        <div class="case-study-content">
+            <h3>Background</h3>
+            <p>The Requested Delivery Date Update Module was developed to address inefficiencies in sales order scheduling within an SAP environment. In supply chain operations, accurately determining requested delivery dates (RDD) is critical for aligning customer expectations with material availability and production timelines. Manual processes or inaccurate calculations often led to delays and customer dissatisfaction. The goal was to create an RFC-enabled ABAP function module that simulates sales orders, calculates RDD based on ATP (Available-to-Promise) checks or lead time parameters, and returns the updated dates to the calling system for seamless integration. This project demonstrates my expertise in SAP SD (Sales and Distribution), ABAP development, and system integration with SAP CRM, EDI and Hybris for supply chain optimization.</p>
+    
+            <h3>Technical Approach</h3>
+            <p>The solution leverages SAP standard sales order simulation capabilities, enhanced with custom ABAP logic to handle complex delivery date calculations. Key components include:</p>
+            <p><strong>RFC-Enabled Function Module:</strong> Developed an RFC function module to allow external systems outside S/4HANA On-Premise like SAP CRM Web UI and SAP Commerce/Hybris to retrieve updated delivery dates, with inputs like sales document type, sales organization, and material data, and outputs including calculated RDD and error messages.</p>
+            <p><strong>Sales Order Simulation:</strong> Utilized <code>BAPI_SALESORDER_SIMULATE</code> to simulate sales orders, retrieving schedule line data such as confirmed quantities and delivery dates, configured to bypass credit checks.</p>
+            <p><strong>Delivery Date Calculation:</strong> Calculated RDD using ATP checks or lead time data (e.g., material lead time, transit time), adjusted with factory calendars for working days, and applied fallback logic (e.g., today + 3 days) when needed.</p>
+            <p><strong>Data Integration:</strong> Processed customer and material data, validated against SAP master tables, and used parallel cursor techniques for performance optimization.</p>
+            <p><strong>Error Handling:</strong> Returned structured error messages via BAPI return tables for robust exception handling.</p>
+
+            <!-- Add Pseudocode Image -->
+            <div class="image-caption">Pseudocode: Parallel Cursor Technique to process large datasets and to avoid nested loops</div>               
+            <img src="../../assets/images/delivery-date-pseudo-code.png" alt="Pseudo-Code for Parallel Cursor Technique used in the RFC" class="case-study-image" loading="lazy">            
+               
+            <h3>Challenges</h3>
+            <p><strong>Performance Optimization:</strong> Processing large volumes of schedule lines caused bottlenecks. Implemented parallel cursor techniques, sorted internal tables, and used binary search to improve performance.</p>
+            <p><strong>Complex Delivery Date Logic:</strong> Handling ATP-based, lead-time-based, and complete vs. partial delivery scenarios required intricate logic. Developed modular code with factory calendar integration for accuracy.</p>
+            <p><strong>RFC Integration:</strong> Ensuring robust data return without session issues was challenging. Used BAPI return tables and session initialization to manage state.</p>
+
+            <h3>Impact</h3>
+            <p><strong>Operational Efficiency:</strong> Automated RDD calculations reduced manual scheduling efforts, enabling sales teams to focus on customer engagement.</p>
+            <p><strong>Supply Chain Accuracy:</strong> Improved delivery date accuracy, reducing delays and aligning customer expectations.</p>
+            <p><strong>System Integration:</strong> Facilitated seamless integration with external systems via RFC, enhancing interoperability.</p>
+            <p><strong>Client Satisfaction:</strong> Reliable delivery schedules increased customer trust and satisfaction.</p>
+    
+            <h3>Lessons Learned</h3>
+            <p><strong>Performance Tuning:</strong> Learned to optimize ABAP code for large datasets using parallel cursors and binary searches.</p>
+            <p><strong>Modular Design:</strong> Breaking down complex logic into modular components improved maintainability.</p>
+            <p><strong>Factory Calendar Integration:</strong> Gained insights into SAP’s factory calendar functionality for global supply chain contexts.</p>
+            <p><strong>RFC Best Practices:</strong> Understood session state management and error handling in RFC development.</p>
+
+            <a href="https://www.credly.com/users/mikedsevilla/badges" target="_blank" class="cta-button secondary">View My SAP Certifications</a>
+            <a href="../../index.html#projects" class="cta-button secondary">Back to Projects</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Mike Sevilla. All rights reserved. Case studies are generalized to protect confidentiality and do not disclose proprietary information from past employers.</p>
+    </footer>
+
+    <!-- Include main.js (copy from index.html) -->     
+     <script src="../js/main.js"></script>
+</body>
+</html>
