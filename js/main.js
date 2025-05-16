@@ -142,3 +142,30 @@ if  (backToTopButton) {
         document.querySelector('header')?.focus(); // Focus header for accessibility
     });
 };
+
+// Gallery functionality for speaking engagements
+const galleries = document.querySelectorAll('.speaking-gallery');
+    
+galleries.forEach(gallery => {
+    const slides = gallery.querySelectorAll('.gallery-image');
+    const prevButton = gallery.querySelector('.gallery-prev');
+    const nextButton = gallery.querySelector('.gallery-next');
+    let currentIndex = 0;
+
+    // Show the first slide by default
+    slides[currentIndex].classList.add('active');
+
+    // Previous button click
+    prevButton.addEventListener('click', () => {
+        slides[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        slides[currentIndex].classList.add('active');
+    });
+
+    // Next button click
+    nextButton.addEventListener('click', () => {
+        slides[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add('active');
+    });
+});
